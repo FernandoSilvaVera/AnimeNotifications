@@ -3,11 +3,10 @@
 	using GalaSoft.MvvmLight.Command;
 	using System.Threading.Tasks;
 	using System.Windows.Input;
-	using System.ComponentModel;
 	using Xamarin.Forms;
 
 	class LoginViewModel : BaseViewModel
-    {
+	{
 		#region Attributes
 		private string pass;
 		private bool isRunning;
@@ -17,20 +16,17 @@
 		#region Properties
 		public string User { get; set; }
 
-		public string Pass 
-		{
+		public string Pass {
 			get { return pass; }
 			set { SetValue(ref pass, value); }
 		}
 
-		public bool IsRunning 
-		{
+		public bool IsRunning {
 			get { return isRunning; }
 			set { SetValue(ref isRunning, value); }
 		}
 
-		public bool IsEnabled 
-		{
+		public bool IsEnabled {
 			get { return isEnabled; }
 			set { SetValue(ref isEnabled, value); }
 		}
@@ -39,19 +35,17 @@
 		#region Constructors
 		public LoginViewModel()
 		{
-			User		= "Ventus";
-			Pass		= "admin";
-			isEnabled	= true;
-			IsRunning	= false;
+			User = "Ventus";
+			Pass = "admin";
+			isEnabled = true;
+			IsRunning = false;
 
 		}
 		#endregion
 
 		#region Commands
-		public ICommand LoginCommand 
-		{
-			get 
-			{
+		public ICommand LoginCommand {
+			get {
 				return new RelayCommand(Login);
 			}
 		}
