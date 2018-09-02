@@ -4,13 +4,15 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Anime
 {
+	using Views;
+
 	public partial class App : Application
 	{
 		#region Constructors
 		public App()
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage( new Views.LoginPage() );
+			MainPage = new NavigationPage( new LoginPage() );
 		}
 		#endregion
 
