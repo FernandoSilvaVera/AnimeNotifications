@@ -1,13 +1,38 @@
-﻿namespace Anime.ViewModels
+﻿using System.Collections.ObjectModel;
+
+namespace Anime.ViewModels
 {
-    class ListaAnimesViewModel
+
+	using Models;
+	using Services;
+
+	class ListaAnimesViewModel : BaseViewModel
     {
+		#region Services
+		private ApiService apiService;
+		#endregion
+
+		#region Attributes
+		private ObservableCollection <Anime> animes;
+		#endregion
+
+		#region Properties
+		public ObservableCollection <Anime> Animes {
+			get => animes;
+			set => SetValue(ref animes, value);
+		}
+		#endregion
 
 		#region Constructors
-		public ListaAnimesViewModel()
+		public ListaAnimesViewModel() => apiService = new ApiService();
+		#endregion
+
+		#region Methods
+		private void LoadAnimes()
 		{
 
 		}
 		#endregion
-    }
+
+	}
 }
