@@ -4,6 +4,7 @@
 	using System.Threading.Tasks;
 	using System.Windows.Input;
 	using Xamarin.Forms;
+	using Views;
 
 	class LoginViewModel : BaseViewModel
 	{
@@ -35,7 +36,7 @@
 		#region Constructors
 		public LoginViewModel()
 		{
-			User = "Ventus";
+			User = "Vents";
 			Pass = "admin";
 			isEnabled = true;
 			IsRunning = false;
@@ -58,6 +59,8 @@
 		{
 			if (!await camposValidos())
 				return;
+			MainViewModel.Instance.ListaAnimes = new ListaAnimesViewModel();
+			await Application.Current.MainPage.Navigation.PushAsync(new ListaAnimesPage());
 		}
 
 		private async Task<bool> camposValidos()
