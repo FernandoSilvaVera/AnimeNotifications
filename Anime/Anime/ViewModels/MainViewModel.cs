@@ -10,8 +10,8 @@
 		#region Constructors
 		public MainViewModel()
 		{
-			instance = this;
-			Login = new LoginViewModel();
+			instance	= this;
+			Login		= new LoginViewModel();
 		}
 		#endregion
 

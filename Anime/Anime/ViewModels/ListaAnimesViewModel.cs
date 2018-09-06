@@ -28,10 +28,7 @@ namespace Anime.ViewModels
 		#endregion
 
 		#region Methods
-		private void LoadAnimes()
-		{
-
-		}
+		private void LoadAnimes() { }
 		#endregion
 
 	}

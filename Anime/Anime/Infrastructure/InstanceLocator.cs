@@ -10,10 +10,7 @@
 		#endregion
 
 		#region Constructors
-		public InstanceLocator()
-		{
-			Main = new MainViewModel();
-		}
+		public InstanceLocator() => Main = new MainViewModel();
 		#endregion
 
 	}

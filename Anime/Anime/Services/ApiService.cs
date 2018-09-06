@@ -5,9 +5,5 @@ namespace Anime.Services
 {
 	class ApiService
 	{
-		#region Methods
-
-		#endregion
-
 	}
 }

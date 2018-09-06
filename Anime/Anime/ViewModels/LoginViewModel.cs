@@ -18,18 +18,19 @@
 		public string User { get; set; }
 
 		public string Pass {
-			get { return pass; }
-			set { SetValue(ref pass, value); }
+			get => pass;
+			set => SetValue(ref pass, value);
 		}
 
 		public bool IsRunning {
-			get { return isRunning; }
-			set { SetValue(ref isRunning, value); }
+			get => isRunning;
+
+			set => SetValue(ref isRunning, value);
 		}
 
 		public bool IsEnabled {
-			get { return isEnabled; }
-			set { SetValue(ref isEnabled, value); }
+			get => isEnabled; 
+			set => SetValue(ref isEnabled, value);
 		}
 		#endregion
 
@@ -40,7 +41,6 @@
 			Pass = "admin";
 			isEnabled = true;
 			IsRunning = false;
-
 		}
 		#endregion
 
@@ -57,13 +57,13 @@
 		#region Methods
 		private async void Login()
 		{
-			if (!await camposValidos())
+			if (!await CamposValidos())
 				return;
 			MainViewModel.Instance.ListaAnimes = new ListaAnimesViewModel();
 			await Application.Current.MainPage.Navigation.PushAsync(new ListaAnimesPage());
 		}
 
-		private async Task<bool> camposValidos()
+		private async Task<bool> CamposValidos()
 		{
 			if (string.IsNullOrEmpty(User) || string.IsNullOrEmpty(Pass))
 			{

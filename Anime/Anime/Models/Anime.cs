@@ -2,10 +2,10 @@
 {
     class Anime
     {
-		public string Nombre { get; set; }
+		 string Nombre { get; set; }
 
-		public string Capitulos { get; set; }
+		 string Capitulos { get; set; }
 
-		public string Descripcion { get; set; }
+		 string Descripcion { get; set; }
 	}
 }
