@@ -35,24 +35,12 @@
 		#endregion
 
 		#region Constructors
-		public LoginViewModel()
-		{
-			User = "Vents";
-			Pass = "admin";
-			isEnabled = true;
-			IsRunning = false;
-		}
+		public LoginViewModel() => IsEnabled = true;
 		#endregion
 
 		#region Commands
-		public ICommand LoginCommand {
-			get {
-				return new RelayCommand(Login);
-			}
-		}
+		public ICommand LoginCommand => new RelayCommand(Login);
 		#endregion
-
-
 
 		#region Methods
 		private async void Login()
