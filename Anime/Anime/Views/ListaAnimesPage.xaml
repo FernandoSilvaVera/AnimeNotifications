@@ -6,15 +6,43 @@
 			 Title="Animes"
 			 >
     <ContentPage.Content>
-		<ScrollView
+		<StackLayout
 			BindingContext="{Binding ListaAnimes}"
-			>
-			<StackLayout>
-				<Label 
-					Text="Aqui estarán los Animes"
-					VerticalOptions="CenterAndExpand" 
-					HorizontalOptions="CenterAndExpand" />
-			</StackLayout>
-		</ScrollView>
-    </ContentPage.Content>
+			Padding="5">
+			<SearchBar
+				Placeholder="Buscar..."
+				Text="{Binding Filter, Mode=TwoWay}"
+				SearchCommand="{Binding SearchCommand}">
+			</SearchBar>
+			<ListView
+				HasUnevenRows="True"
+				IsPullToRefreshEnabled="True"
+				IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+				ItemsSource="{Binding Animes}"
+				RefreshCommand="{Binding RefreshCommand}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+								<StackLayout
+									Grid.Column="0"
+									VerticalOptions="Center">
+									<Label
+										FontAttributes="Bold"
+										FontSize="Medium"
+										TextColor="Black"
+										Text="{Binding Nombre}"/>
+									<Label Text="{Binding Descripcion}" TextColor="Black"/>
+									<Label Text="{Binding Capitulos}" TextColor="Black"/>
+								</StackLayout>
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>
