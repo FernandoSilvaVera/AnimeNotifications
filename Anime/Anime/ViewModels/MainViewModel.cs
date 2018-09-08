@@ -4,8 +4,9 @@
     {
 		#region ViewModels
 		public LoginViewModel Login { get; set; }
-		public ListaAnimesViewModel ListaAnimes { get; set; }
-		public ListMangasViewModel ListMangas { get; set; }
+		public ListAnimeViewModel ListaAnimes { get; set; }
+		public ListMangaViewModel ListMangas { get; set; }
+		public ItemViewModel Item { get; set; }
 		#endregion
 
 		#region Constructors
