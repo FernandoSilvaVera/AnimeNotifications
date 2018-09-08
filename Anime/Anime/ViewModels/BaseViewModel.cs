@@ -1,10 +1,9 @@
-﻿
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 namespace Anime.ViewModels
 {
-	using System.Collections.Generic;
-	using System.ComponentModel;
-	using System.Runtime.CompilerServices;
-
 	public class BaseViewModel : INotifyPropertyChanged
     {
 		#region Events
@@ -23,6 +22,5 @@ namespace Anime.ViewModels
 			OnPropertyChanged(propertyName);
 		}
 		#endregion
-
 	}
 }
