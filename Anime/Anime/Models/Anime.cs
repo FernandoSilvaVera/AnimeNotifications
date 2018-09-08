@@ -1,6 +1,6 @@
 ﻿namespace Anime.Models
 {
-    class Anime
+    public class Anime
     {
 		 public string Nombre { get; set; }
 
