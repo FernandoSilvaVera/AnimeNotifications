@@ -48,8 +48,8 @@ namespace Anime.ViewModels
 			if (!await CamposValidos())
 				return;
 
-			MainViewModel.Instance.ListaAnimes = new ListaAnimesViewModel();
-			MainViewModel.Instance.ListMangas = new ListMangasViewModel();
+			MainViewModel.Instance.ListaAnimes = new ListAnimeViewModel();
+			MainViewModel.Instance.ListMangas = new ListMangaViewModel();
 			await Application.Current.MainPage.Navigation.PushAsync(new OtakuTabbedPage());
 		}
 
