@@ -5,6 +5,7 @@
 		#region ViewModels
 		public LoginViewModel Login { get; set; }
 		public ListaAnimesViewModel ListaAnimes { get; set; }
+		public ListMangasViewModel ListMangas { get; set; }
 		#endregion
 
 		#region Constructors
