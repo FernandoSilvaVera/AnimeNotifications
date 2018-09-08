@@ -77,8 +77,8 @@ namespace Anime.ViewModels
 		#region Methods
 		public async void ListItem()
 		{
-			MainViewModel.Instance.Item = new ItemViewModel(this);
-			await Application.Current.MainPage.Navigation.PushAsync(new ItemPage());
+			MainViewModel.Instance.Anime = new AnimeViewModel(this);
+			await Application.Current.MainPage.Navigation.PushAsync(new AnimePage());
 		}
 		#endregion
 	}

@@ -16,10 +16,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\ItemPage.xaml">
+    <Compile Update="Views\AnimePage.xaml.cs">
+      <DependentUpon>AnimePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ListAnimePage.xaml.cs">
+      <DependentUpon>ListAnimePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ListCoreTabbedPage.xaml.cs">
+      <DependentUpon>ListCoreTabbedPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\AnimePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ListaAnimesPage.xaml">
+    <EmbeddedResource Update="Views\ListAnimePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ListMangaPage.xaml">
@@ -28,7 +40,7 @@
     <EmbeddedResource Update="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\OtakuTabbedPage.xaml">
+    <EmbeddedResource Update="Views\ListCoreTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

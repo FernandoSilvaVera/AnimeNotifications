@@ -6,12 +6,12 @@ namespace Anime.ViewModels
 {
 	using Models;
 
-	class ItemViewModel
+	class AnimeViewModel
 	{
 		#region Properties
 		public Anime Anime { get; set; }
 		#endregion
 
-		public ItemViewModel(Anime anime) => Anime = anime;
+		public AnimeViewModel(Anime anime) => Anime = anime;
 	}
 }

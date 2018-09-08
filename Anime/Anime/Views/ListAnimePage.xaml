@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
-			xmlns="http://xamarin.com/schemas/2014/forms"
-			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			x:Class="Anime.Views.ListMangaPage"
-			BindingContext="{Binding Main, Source={StaticResource Locator}}"
-			Title="Mangas">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Anime.Views.ListAnimePage"
+			 BindingContext="{Binding Main, Source={StaticResource Locator}}"
+			 Title="Animes">
     <ContentPage.Content>
 		<StackLayout
-			BindingContext="{Binding ListManga}"
+			BindingContext="{Binding ListAnime}"
 			Padding="5">
 			<SearchBar
 				Placeholder="Buscar..."
