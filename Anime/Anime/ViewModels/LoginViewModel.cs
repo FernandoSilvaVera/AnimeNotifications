@@ -1,9 +1,10 @@
-﻿namespace Anime.ViewModels
+﻿using GalaSoft.MvvmLight.Command;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace Anime.ViewModels
 {
-	using GalaSoft.MvvmLight.Command;
-	using System.Threading.Tasks;
-	using System.Windows.Input;
-	using Xamarin.Forms;
 	using Views;
 
 	class LoginViewModel : BaseViewModel
@@ -24,7 +25,6 @@
 
 		public bool IsRunning {
 			get => isRunning;
-
 			set => SetValue(ref isRunning, value);
 		}
 
@@ -47,8 +47,10 @@
 		{
 			if (!await CamposValidos())
 				return;
+
 			MainViewModel.Instance.ListaAnimes = new ListaAnimesViewModel();
-			await Application.Current.MainPage.Navigation.PushAsync(new ListaAnimesPage());
+			MainViewModel.Instance.ListMangas = new ListMangasViewModel();
+			await Application.Current.MainPage.Navigation.PushAsync(new OtakuTabbedPage());
 		}
 
 		private async Task<bool> CamposValidos()
