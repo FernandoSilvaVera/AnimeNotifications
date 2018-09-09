@@ -1,11 +1,16 @@
-﻿namespace Anime.Models
+﻿using System.Collections.Generic;
+
+namespace Anime.Models
 {
     public class Anime
     {
-		 public string Nombre { get; set; }
+		public string Nombre { get; set; }
 
-		 public string Capitulos { get; set; }
+		public int Capitulos { get; set; }
 
-		 public string Descripcion { get; set; }
+		public string Descripcion { get; set; }
+
+		public List<Chapter> Chapters { get; set; }
+
 	}
 }
