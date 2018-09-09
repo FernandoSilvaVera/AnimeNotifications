@@ -16,6 +16,37 @@
 					Text="Capítulos"
 					TextColor="Black">
 				</Label>
+				<ListView
+				HasUnevenRows="True"
+				IsPullToRefreshEnabled="True"
+				ItemsSource="{Binding Anime.Chapters}"
+				RefreshCommand="{Binding RefreshCommand}">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<Frame>
+									<Frame.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding Source={StaticResource Locator}, Path=Main.Anime.SelectChapterListCommand}"/>
+									</Frame.GestureRecognizers>
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*"/>
+										</Grid.ColumnDefinitions>
+										<StackLayout
+									Grid.Column="0"
+									VerticalOptions="Center">
+											<Label
+										FontAttributes="Bold"
+										FontSize="Medium"
+										TextColor="Black"
+										Text="{Binding Number, StringFormat='Capítulo {0}'}"/>
+										</StackLayout>
+									</Grid>
+								</Frame>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
 			</StackLayout>
 		</ScrollView>
     </ContentPage.Content>
