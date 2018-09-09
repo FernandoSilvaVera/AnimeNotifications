@@ -24,7 +24,9 @@
 						<ViewCell>
 							<Frame>
 								<Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding SelectItemListCommand}"/>
+                                    <TapGestureRecognizer 
+										Command="{Binding Source={StaticResource Locator}, Path=Main.ListAnime.SelectItemListCommand}"
+										CommandParameter="{Binding Nombre}"/>
 								</Frame.GestureRecognizers>
 								<Grid>
 									<Grid.ColumnDefinitions>
