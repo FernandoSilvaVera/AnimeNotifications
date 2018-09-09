@@ -25,61 +25,12 @@ namespace Anime.ViewModels
 			#region futureDataBase
 			animesList = new List<Anime>
 			{
-				new Anime() { Nombre = "Dragon ball", Descripcion = "Goku y Vegeta", Capitulos = "50" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = "500" },
-				new Anime() { Nombre = "Death Note", Descripcion = "L y Kira", Capitulos = "10" }
+				new Anime() { Nombre = "Dragon ball", Descripcion = "Goku y Vegeta", Capitulos = 50 },
+				new Anime() { Nombre = "Naruto", Descripcion = "Naruto y Sasuke", Capitulos = 500 },
+				new Anime() { Nombre = "Death Note", Descripcion = "L y Kira", Capitulos = 10 }
 			};
 			#endregion
-			Animes = new ObservableCollection<ListItemViewModel>(GetListItemViewModel());
+			Animes = new ObservableCollection<Anime>(animesList);
 			IsRefreshing = false;
 		}
 

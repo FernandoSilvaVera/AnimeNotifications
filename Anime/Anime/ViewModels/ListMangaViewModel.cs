@@ -25,61 +25,12 @@ namespace Anime.ViewModels
 			#region futureDataBase
 			animesList = new List<Anime>
 			{
-				new Anime() { Nombre = "Happy Sugar Life", Descripcion = "Rosa y loli", Capitulos = "50" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = "500" },
-				new Anime() { Nombre = "One Piece", Descripcion = "Luffy", Capitulos = "10" }
+				new Anime() { Nombre = "Happy Sugar Life", Descripcion = "Rosa y loli", Capitulos = 20 },
+				new Anime() { Nombre = "Boku No Hero", Descripcion = "Deku", Capitulos = 5 },
+				new Anime() { Nombre = "One Piece", Descripcion = "Luffy", Capitulos = 10 }
 			};
 			#endregion
-			Animes = new ObservableCollection<ListItemViewModel>(GetListItemViewModel());
+			Animes = new ObservableCollection<Anime>(list: animesList);
 			IsRefreshing = false;
 		}
 

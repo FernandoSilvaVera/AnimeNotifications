@@ -12,9 +12,9 @@ namespace Anime.ViewModels
 	using Views;
 
 	class ListOtakuViewModel : BaseViewModel
-    {
+	{
 		#region Attributes
-		private ObservableCollection<ListItemViewModel> animes;
+		private ObservableCollection<Anime> animes;
 		private bool isRefreshing;
 		private string filter;
 		protected List<Anime> animesList;
@@ -32,54 +32,36 @@ namespace Anime.ViewModels
 			get => isRefreshing;
 			set => SetValue(ref isRefreshing, value);
 		}
-		public ObservableCollection<ListItemViewModel> Animes {
+		public ObservableCollection<Anime> Animes {
 			get => animes;
 			set => SetValue(ref animes, value);
 		}
 		#endregion
 
 		#region Commands
-		public ICommand SearchCommand	=> new RelayCommand(Search);
+		public ICommand SearchCommand => new RelayCommand(Search);
+		public ICommand SelectItemListCommand => new RelayCommand<string>(ListItem);
 		#endregion
 
 
 		#region Methods
-		private ObservableCollection<ListItemViewModel> ApplyFilter()
-		{	
-			return new ObservableCollection<ListItemViewModel>(
-				GetListItemViewModel().Where(
+		private ObservableCollection<Anime> ApplyFilter()
+		{
+			return new ObservableCollection<Anime>(
+				animesList.Where(
 					a => a.Nombre.ToLower().Contains(Filter.ToLower())
 				)
 			);
 		}
 
-		private void Search() => Animes = string.IsNullOrEmpty(Filter) ? new ObservableCollection<ListItemViewModel>(GetListItemViewModel()) : ApplyFilter();
+		private void Search() => Animes = string.IsNullOrEmpty(Filter) ? new ObservableCollection<Anime>(animesList) : ApplyFilter();
 
-		protected IEnumerable<ListItemViewModel> GetListItemViewModel()
+		public async void ListItem(string selected)
 		{
-			return animesList.Select(a => new ListItemViewModel
-			{
-				Capitulos		= a.Capitulos,
-				Descripcion		= a.Descripcion,
-				Nombre			= a.Nombre
-			});
-		}
-
-		#endregion
-    }
-
-	class ListItemViewModel : Anime
-    {
-		#region Commands
-		public ICommand SelectItemListCommand => new RelayCommand(ListItem);
-		#endregion
-
-		#region Methods
-		public async void ListItem()
-		{
-			MainViewModel.Instance.Anime = new AnimeViewModel(this);
+			MainViewModel.Instance.Anime = new AnimeViewModel(animesList.Where(a => a.Nombre.Equals(selected)).ToArray()[0]);
 			await Application.Current.MainPage.Navigation.PushAsync(new AnimePage());
 		}
+
 		#endregion
 	}
 
