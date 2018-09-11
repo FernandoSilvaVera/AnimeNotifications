@@ -33,9 +33,10 @@ namespace Anime.ViewModels
 
 		public ICommand SelectChapterListCommand => new RelayCommand(SelectChapter);
 
-		private void SelectChapter()
+		private async void SelectChapter()
 		{
-			Xamarin.Forms.Application.Current.MainPage = new NavigationPage( new ListCoreTabbedPage() );
+			MainViewModel.Instance.ShowManga = new ShowMangaViewModel(Anime);
+			await Application.Current.MainPage.Navigation.PushAsync(new ShowPage());
 		}
 
 	}
