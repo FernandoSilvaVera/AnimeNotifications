@@ -7,6 +7,7 @@
 		public ListAnimeViewModel ListAnime { get; set; }
 		public ListMangaViewModel ListManga { get; set; }
 		public AnimeViewModel Anime { get; set; }
+		public ShowMangaViewModel ShowManga { get; set; }
 		#endregion
 
 		#region Constructors
