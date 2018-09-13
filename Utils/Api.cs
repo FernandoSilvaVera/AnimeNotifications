@@ -9,14 +9,13 @@ namespace IronWebScraperConsole
     {
         static void Main(string[] args)
         {
-            var scraper = new NineManga();
-            scraper.Start();
+            new NineManga("http://es.ninemanga.com/manga/Boku+no+Hero+Academia.html", new NineManga().MangaChapters).Start();
+			new NineManga("http://es.ninemanga.com/chapter/Boku%20no%20Hero%20Academia/196978.html", new NineManga().ChapterLinks).Start();
         }
     }
 
 	public class Manga
 	{
-
 		public string Href { get; set; }
 		public string Chapter { get; set; }
 
@@ -25,24 +24,36 @@ namespace IronWebScraperConsole
 			Href = href;
 			Chapter = chapter;
 		}
-
 	}
 
 
     public class NineManga : WebScraper
     {
 
-		private List<Manga> Manga { get; set; }
+		private static List<Manga> Manga { get; set; }
+		private static List<string> Chapter { get; set; }
+		public static string Href { get; set; }
+		public static Action<Response> Function { get; set; }
 
-		public NineManga() => Manga = new List<Manga>();
+		public NineManga(string href, Action<Response> function)
+		{
+			Manga = new List<Manga>();
+			Chapter = new List<string>();
+			Href = href;
+			Function = function;
+		}
+
+		public NineManga()
+		{
+		}
 
         public override void Init()
         {
             LoggingLevel = LogLevel.All;
-            Request("http://es.ninemanga.com/manga/Boku+no+Hero+Academia.html", Parse);
+            Request(Href, Function);
         }
 
-        public override void Parse(Response response)
+        public void MangaChapters(Response response)
         {
 			foreach (var attribute in response.Css("li").CSS("a.chapter_list_a"))
 				Manga.Add(new Manga(attribute.Attributes["href"], Regex.Match(attribute.Attributes["title"], @"\d+").Value));
@@ -53,7 +64,21 @@ namespace IronWebScraperConsole
 				Console.Write(" - ");
 				Console.WriteLine(manga.Href);
 			}
-			Console.ReadKey();
+			//Console.ReadKey();
+
+			//GenerateChapter("as");
+
         }
-    }
+
+		public void ChapterLinks(Response response)
+		{
+			int index = Href.IndexOf(".html");
+			for (int i = 0; i < response.Css("div.changepage").CSS("select").CSS("option").Length/2; i++)
+				Chapter.Add(Href.Insert(index , "-"+ i.ToString()));
+
+			Console.ReadKey();
+		}
+
+		public override void Parse(Response response) => throw new NotImplementedException();
+	}
 }
