@@ -1,0 +1,64 @@
+using IronWebScraper;
+using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+
+	public class NineManga : WebScraper
+	{
+		private static List<Manga> Manga { get; set; }
+		public static string Href { get; set; }
+		public static Action<Response> Function { get; set; }
+		public static string CurrentyImage { get; set; }
+
+		#region Constructors
+		public NineManga(string href, Action<Response> function, string image = null)
+		{
+			Href = href;
+			Function = function;
+			CurrentyImage = image;
+		}
+
+		public NineManga(ref List<Manga> manga) => Manga = manga;
+		#endregion
+
+		#region Scraper
+		public override void Init()
+		{
+			LoggingLevel = LogLevel.All;
+			Identities.Add(new HttpIdentity { UserAgent = CommonUserAgents.ChromeDesktopUserAgents[0] });
+			Request(Href, Function);
+		}
+
+		public override void Parse(Response response) => throw new NotImplementedException();
+		#endregion
+
+		#region Methods
+		public void MangaChapters(Response response) => response.Css("li").CSS("a.chapter_list_a").ToList().ForEach(a => Manga.Add(new Manga(a.Attributes["href"], Regex.Match(a.Attributes["title"], @"\d+").Value)));
+
+		public void ImageLinks(Response response)
+		{
+			for (int i = 2; i <= response.Css("div.changepage").CSS("select").CSS("option").Length / 2; i++)
+				Manga[Currenty(Href)].Page.Href.Add(Href.Insert(Href.IndexOf(".html"), "-" + i.ToString()));  
+		}
+
+		public void ImageSrc(Response response)
+		{
+			foreach (var attribute in response.Css("a.pic_download"))
+				Manga[Currenty(CurrentyImage)].Page.Image.Add(attribute.Attributes["href"]);
+		}
+
+		private int Currenty(string href) => Manga.FindIndex(m => m.Href.Equals(href));
+
+
+		#endregion
+
+		
+
+
+	}
+
+}
